@@ -16,8 +16,8 @@ library.push(
   {
     text: (
       <div>
-        <a href="https://github.com/MrXujiang">@徐小夕</a>
-        <a href="https://github.com/yehuozhili/learnsinglespa">@yehuozhili</a>
+        <a href="https://github.com/ZhChen7">@周琛</a>
+        <a href="https://github.com/ZhChen7/h5-drag">@h5-drag</a>
       </div>
     ),
     useReg: /(.*?)作者是谁(.*?)/,
@@ -121,7 +121,7 @@ export default function Layout({ children }: IRouteComponentProps) {
             scrolling="no"
             border="0"
             frameborder="no"
-            framespacing="0"
+            framespacing="0"        
             allowfullscreen="true"
           >
             {' '}

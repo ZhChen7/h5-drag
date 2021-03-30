@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/components/BasicShop/BasicComponents/Footer/template.ts"],"names":["template","type","h","displayName"],"mappings":"4FAAA,UAAMA,GAAW,CACfC,KAAM,SACNC,EAAG,GACHC,YAAa,QAEAH","file":"53.js","sourcesContent":["const template = {\n  type: 'Footer',\n  h: 10,\n  displayName: '页脚组件',\n};\nexport default template;\n"],"sourceRoot":""}

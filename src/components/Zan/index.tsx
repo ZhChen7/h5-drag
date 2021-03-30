@@ -18,7 +18,7 @@ export default memo(function ZanPao(props: IProps) {
   const {
     text = (
       <Button type="primary" danger style={{ background: 'red !important' }} size="large">
-        支持开源, 请作者喝茶~
+        支持开源, 请作者喝茶~1111
       </Button>
     ),
   } = props;
