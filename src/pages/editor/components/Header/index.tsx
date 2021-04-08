@@ -228,9 +228,9 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         <div className={styles.logo}></div>
       </div>
       <div className={styles.controlArea}>
-        <Button type="primary" style={{ marginRight: '9px' }} onClick={useTemplate}>
+        {/* <Button type="primary" style={{ marginRight: '9px' }} onClick={useTemplate}>
           模版库
-        </Button>
+        </Button> */}
         <Button
           type="link"
           style={{ marginRight: '9px' }}
@@ -239,7 +239,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         >
           保存模版
         </Button>
-        <Upload {...uploadprops}>
+        {/* <Upload {...uploadprops}>
           <Button type="link" style={{ marginRight: '8px' }}>
             <UploadOutlined />
           </Button>
@@ -251,7 +251,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           disabled={!pointData.length}
         >
           <DownloadOutlined />
-        </Button>
+        </Button> */}
         <Button
           type="link"
           style={{ marginRight: '9px' }}
@@ -270,7 +270,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         >
           <FileAddOutlined />
         </Button>
-        <MyPopover content={content()} directions="BOTTOM">
+        {/* <MyPopover content={content()} directions="BOTTOM">
           <Button
             type="link"
             style={{ marginRight: '9px' }}
@@ -279,7 +279,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           >
             <MobileOutlined />
           </Button>
-        </MyPopover>
+        </MyPopover> */}
         <Button
           type="link"
           style={{ marginRight: '9px' }}
@@ -289,7 +289,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         >
           <DeleteOutlined />
         </Button>
-        <Button
+        {/* <Button
           type="link"
           style={{ marginRight: '9px' }}
           title="撤销"
@@ -297,10 +297,10 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           disabled={!pointData.length}
         >
           <UndoOutlined />
-        </Button>
-        <Button type="link" style={{ marginRight: '9px' }} title="重做" onClick={redohandler}>
+        </Button> */}
+        {/* <Button type="link" style={{ marginRight: '9px' }} title="重做" onClick={redohandler}>
           <RedoOutlined />
-        </Button>
+        </Button> */}
         <Tooltip placement="bottom" title="一键生成海报分享图">
           <Badge dot offset={[-18, 10]}>
             <Button
@@ -316,15 +316,6 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         <Button type="link" onClick={toPreview} disabled={!pointData.length}>
           预览
         </Button>
-        <Button
-          type="link"
-          style={{ marginRight: '9px' }}
-          onClick={toHelp}
-          disabled={!pointData.length}
-          title="使用帮助"
-        >
-          帮助
-        </Button>
       </div>
       <div className={styles.btnArea}>
         {/* 隐藏pc端切换, 保证代码纯粹 */}
@@ -338,14 +329,10 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           <Select.Option value="h5">h5模式</Select.Option>
           <Select.Option value="pc">pc模式</Select.Option>
         </Select> */}
-        <Button type="primary" ghost onClick={toOnlineCoding} style={{ marginRight: '12px' }}>
-          <CodeOutlined />
-          在线编程
-        </Button>
-        <Button type="primary" ghost onClick={toVipLogin} style={{ marginRight: '12px' }}>
+        {/* <Button type="primary" ghost onClick={toVipLogin} style={{ marginRight: '12px' }}>
           <SketchOutlined />
           会员登录
-        </Button>
+        </Button> */}
       </div>
       <Modal
         title="生成封面中...(长时间未反应请点右侧按钮重试)"

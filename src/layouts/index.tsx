@@ -158,16 +158,6 @@ export default function Layout({ children }: IRouteComponentProps) {
       </div>
       {render}
       {children}
-      {window.location.pathname.indexOf('editor') > -1 && (
-        <Draggable>
-          <div className={styles.dragPay}>
-            <div className={styles.crouseBtn}>搭建技巧(可拖动)</div>
-            <div className={styles.mask} onClick={showVideo}>
-              <img src={Dooring} alt="" />
-            </div>
-          </div>
-        </Draggable>
-      )}
     </div>
   );
 }
