@@ -31,18 +31,6 @@ export default defineConfig({
           component: '../pages/editor',
         },
         {
-          path: '/ide',
-          component: '../pages/ide',
-        },
-        {
-          path: '/help',
-          component: '../pages/help',
-        },
-        {
-          path: '/login',
-          component: '../pages/login',
-        },
-        {
           path: '/mobileTip',
           component: '../pages/mobileTip',
         },
