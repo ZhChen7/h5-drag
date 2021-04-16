@@ -83,7 +83,7 @@ const Footer: IFooterSchema = {
     color: 'rgba(255,255,255,1)',
     align: 'center',
     fontSize: 16,
-    height: 48,
+    height: 50,
     ...baseDefault,
   },
 };

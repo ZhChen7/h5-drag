@@ -29,6 +29,7 @@ interface SourceBoxProps {
 const SourceBox = memo((props: SourceBoxProps) => {
   const { pstate, scaleNum, canvasId, allType, dispatch, dragState, setDragState, cstate } = props;
 
+  console.log(props);
   let pointData = pstate ? pstate.pointData : [];
   const cpointData = cstate ? cstate.pointData : [];
 
@@ -155,6 +156,7 @@ const SourceBox = memo((props: SourceBoxProps) => {
         }}
       >
         <div className={styles.canvasBox}>
+          1231313
           <MenuProvider id="menu_id">
             <div
               style={{

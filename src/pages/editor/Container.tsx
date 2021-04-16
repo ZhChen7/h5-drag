@@ -10,8 +10,8 @@ import {
 import { connect } from 'dva';
 import HeaderComponent from './components/Header';
 import CanvasControl from './components/CanvasControl';
-import SourceBox from './SourceBox';
-import TargetBox from './TargetBox';
+import SourceBox from './SourceBox'; // 中间
+import TargetBox from './TargetBox'; // 基础组件
 import Calibration from 'components/Calibration';
 import DynamicEngine, { componentsType } from '@/core/DynamicEngine';
 import FormRender from '@/core/FormRender';
@@ -47,6 +47,7 @@ const Container = (props: {
       setCollapsed(c);
     };
   }, []);
+
   const changeRightColla = useMemo(() => {
     return (c: boolean) => {
       setRightColla(c);
@@ -191,6 +192,7 @@ const Container = (props: {
     );
   }, [cpointData.length, curPoint, handleDel, handleFormSave, pointData.length, rightColla]);
 
+  console.log(template);
   const tabRender = useMemo(() => {
     if (collapsed) {
       return (

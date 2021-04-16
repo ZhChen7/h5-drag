@@ -3,6 +3,7 @@ import { IFooterConfig } from './schema';
 import logo from '@/assets/footer.png';
 const Footer = memo((props: IFooterConfig) => {
   const { bgColor, text, color, align, fontSize, height } = props;
+  console.log(props);
   return (
     <>
       {props.isTpl && (
