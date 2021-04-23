@@ -156,7 +156,6 @@ const SourceBox = memo((props: SourceBoxProps) => {
         }}
       >
         <div className={styles.canvasBox}>
-          1231313
           <MenuProvider id="menu_id">
             <div
               style={{

@@ -20,7 +20,8 @@ import { saveAs } from 'file-saver';
 import req from '@/utils/req';
 import Code from '@/assets/code.png';
 import styles from './index.less';
-import MyPopover from 'yh-react-popover';
+// import MyPopover from 'yh-react-popover';
+// import * as axios from 'axios';
 
 const { confirm } = Modal;
 
@@ -69,6 +70,10 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
     );
   };
 
+  const generateFace = (num: number) => {
+    console.log(num);
+  };
+
   const handleSaveTpl = () => {
     confirm({
       title: '确定要保存吗？',
@@ -94,7 +99,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           </div>
           <div className={styles.formIpt}>
             <span>访问链接：</span>
-            <Input disabled value="暂未开放，保存之后可以在模版库中访问" />
+            <Input disabled value="保存之后可以在模版库中访问" />
           </div>
         </div>
       ),
@@ -102,7 +107,9 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
       cancelText: '取消',
       onOk() {
         let name = iptRef.current!.state.value;
-        req.post('/visible/tpl/save', { name, tpl: pointData }).then(res => {
+        console.log({ name, tpl: pointData });
+        req.get('/api').then(res => {
+          console.log('12312 --------- 12312312 ');
           console.log(res);
         });
       },

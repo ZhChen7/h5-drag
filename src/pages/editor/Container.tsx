@@ -1,24 +1,26 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { Result, Tabs } from 'antd';
+import { Result, Tabs } from 'antd'; // 蚂蚁ui框架
 import {
   PieChartOutlined,
   PlayCircleOutlined,
   HighlightOutlined,
   DoubleRightOutlined,
   DoubleLeftOutlined,
-} from '@ant-design/icons';
-import { connect } from 'dva';
-import HeaderComponent from './components/Header';
-import CanvasControl from './components/CanvasControl';
-import SourceBox from './SourceBox'; // 中间
-import TargetBox from './TargetBox'; // 基础组件
-import Calibration from 'components/Calibration';
+} from '@ant-design/icons'; // 图标库
+import { connect } from 'dva'; // 状态库
+
+import HeaderComponent from './components/Header'; // 头部组件
+import CanvasControl from './components/CanvasControl'; // 快捷键组件
+import SourceBox from './SourceBox'; // middle画布组件
+import TargetBox from './TargetBox'; // left物料组件
+import Calibration from 'components/Calibration'; // 画布 - 标尺模块
+
 import DynamicEngine, { componentsType } from '@/core/DynamicEngine';
 import FormRender from '@/core/FormRender';
 
-import template from 'components/BasicShop/BasicComponents/template';
-import mediaTpl from 'components/BasicShop/MediaComponents/template';
-import graphTpl from 'components/BasicShop/VisualComponents/template';
+import template from 'components/BasicShop/BasicComponents/template'; // 基础组建
+import mediaTpl from 'components/BasicShop/MediaComponents/template'; // 媒体组件
+import graphTpl from 'components/BasicShop/VisualComponents/template'; // 可视化组件
 
 import schemaH5 from 'components/BasicShop/schema';
 import { ActionCreators, StateWithHistory } from 'redux-undo';
@@ -29,11 +31,11 @@ import styles from './index.less';
 const { TabPane } = Tabs;
 
 const Container = (props: {
-  history?: any;
-  location?: any;
-  pstate?: any;
+  history?: any; //  history路由操作方法
+  location?: any; // url字符串query
+  pstate?: any; // 刷新后画布中所有组件的状态信息（本地浏览器组件缓存信息）
   cstate?: any;
-  dispatch?: any;
+  dispatch?: any; // redux - 触发
 }) => {
   const [scaleNum, setScale] = useState(1);
   const [collapsed, setCollapsed] = useState(false);
@@ -98,6 +100,7 @@ const Container = (props: {
     };
   }, [curPoint, dispatch]);
 
+  // 清空画布功能
   const clearData = useCallback(() => {
     dispatch({ type: 'editorModal/clearAll' });
   }, [dispatch]);
@@ -111,18 +114,21 @@ const Container = (props: {
     };
   }, [dispatch]);
 
+  // 重做功能
   const redohandler = useMemo(() => {
     return () => {
       dispatch(ActionCreators.redo());
     };
   }, [dispatch]);
 
+  // 撤销功能
   const undohandler = useMemo(() => {
     return () => {
       dispatch(ActionCreators.undo());
     };
   }, [dispatch]);
 
+  // 解析并提取excel数据
   const importTpl = (data: any) => {
     dispatch({
       type: 'editorModal/importTplData',
@@ -130,8 +136,8 @@ const Container = (props: {
     });
   };
 
+  // 检测当前浏览器是否处于手机模式下,tip弹窗提醒
   useEffect(() => {
-    // note (@livs-ops): 检测当前浏览器是否处于手机模式下
     if (detectMobileBrowser(getBrowserNavigatorMetaInfo())) {
       props.history.push('/mobileTip');
     }
@@ -161,6 +167,7 @@ const Container = (props: {
   const [dragstate, setDragState] = useState({ x: 0, y: 0 });
 
   const ref = useRef<HTMLDivElement>(null);
+
   const renderRight = useMemo(() => {
     return (
       <div
@@ -192,7 +199,6 @@ const Container = (props: {
     );
   }, [cpointData.length, curPoint, handleDel, handleFormSave, pointData.length, rightColla]);
 
-  console.log(template);
   const tabRender = useMemo(() => {
     if (collapsed) {
       return (
@@ -340,7 +346,12 @@ const Container = (props: {
         location={props.location}
         importTpl={importTpl}
       />
+
+      {/* ----------------- */}
+
+      {/*  container  --- 底部三个部分 left、middle、right、righticon*/}
       <div className={styles.container}>
+        {/* left -- 物料渲染模块 */}
         <div
           className={styles.list}
           style={{
@@ -376,6 +387,7 @@ const Container = (props: {
           }}
         ></div>
 
+        {/* middle -- 画布render */}
         <div
           className={styles.tickMark}
           id="calibration"
@@ -386,6 +398,7 @@ const Container = (props: {
           onMouseLeave={mouseupfn}
           onWheel={onwheelFn}
         >
+          {/* 标尺模块 */}
           <div className={styles.tickMarkTop}>
             <Calibration direction="up" id="calibrationUp" multiple={scaleNum} />
           </div>
@@ -401,7 +414,11 @@ const Container = (props: {
           />
           <CanvasControl scaleNum={scaleNum} handleSlider={handleSlider} backSize={backSize} />
         </div>
+
+        {/* right -- 右侧编辑渲染模块 */}
         {renderRight}
+
+        {/* rightIcon --- 右侧展开按钮模块 */}
         <div
           className={styles.rightcolla}
           style={{

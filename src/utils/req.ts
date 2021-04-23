@@ -5,8 +5,8 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const instance = axios.create({
   // 服务器地址需要自己配置和开发
-  baseURL: isDev ? 'http://localhost:3000/xxx' : 'http://xxxxx',
-  timeout: 10000,
+  // baseURL: isDev ? 'http://10.61.209.130:3000/' : 'http://xxxxx',
+  // baseURL: '10.61.209.130:3000',
   withCredentials: true,
 });
 

@@ -52,4 +52,14 @@ export default defineConfig({
     utils: path.resolve(__dirname, 'src/utils/'),
     assets: path.resolve(__dirname, 'src/assets/'),
   },
+  proxy: {
+    '/api': {
+      target: 'http://10.61.209.130:3000/', //对应自己的接口
+      changeOrigin: true,
+      ws: true,
+      pathRewrite: {
+        '^/api': '',
+      },
+    },
+  },
 });
