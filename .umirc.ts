@@ -10,7 +10,7 @@ export default defineConfig({
   },
   devtool: 'source-map',
   antd: {},
-  title: '趣谈前端-h5-drag',
+  title: '低代码编辑器',
   // exportStatic: {},
   base: '/',
   publicPath: '/',
@@ -42,7 +42,7 @@ export default defineConfig({
     },
   ],
   theme: {
-    'primary-color': '#2F54EB',
+    'primary-color': 'red',
     // "btn-primary-bg": "#2F54EB"
   },
   extraBabelPlugins: [['import', { libraryName: 'zarm', style: true }]],

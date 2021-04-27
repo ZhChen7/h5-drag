@@ -90,7 +90,7 @@ class PicturesWall extends React.Component<PicturesWallType> {
     const fileList = [
       {
         uid: uuid(8, 16),
-        name: 'h5-drag图片库',
+        name: '图片库',
         status: 'done',
         url: this.state.curSelectedImg,
       },

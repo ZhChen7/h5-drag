@@ -55,7 +55,7 @@ const Qrcode: IQrcodeSchema = {
         uid: '001',
         name: 'image.png',
         status: 'done',
-        url: 'http://49.234.61.19/uploads/code_173e1705e0c.png',
+        url: 'https://i.niupic.com/images/2021/04/26/9gLD.png',
       },
     ],
     text: '二维码',

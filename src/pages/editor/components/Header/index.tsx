@@ -18,7 +18,7 @@ import { history } from 'umi';
 import QRCode from 'qrcode.react';
 import { saveAs } from 'file-saver';
 import req from '@/utils/req';
-import Code from '@/assets/code.png';
+import Code from '@/assets/weixin.png';
 import styles from './index.less';
 // import MyPopover from 'yh-react-popover';
 // import * as axios from 'axios';
@@ -107,9 +107,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
       cancelText: '取消',
       onOk() {
         let name = iptRef.current!.state.value;
-        console.log({ name, tpl: pointData });
         req.get('/api').then(res => {
-          console.log('12312 --------- 12312312 ');
           console.log(res);
         });
       },
@@ -178,6 +176,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
     const { tid } = props.location.query || '';
     req.post('/visible/preview', { tid, tpl: pointData });
   };
+
   const handleSaveCode = () => {
     Modal.confirm({
       title: '确定要下载吗? 每人每天只能下载2次哦~',
@@ -341,6 +340,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           会员登录
         </Button> */}
       </div>
+      {/* 分享图iframe */}
       <Modal
         title="生成封面中...(长时间未反应请点右侧按钮重试)"
         visible={showModalIframe}
