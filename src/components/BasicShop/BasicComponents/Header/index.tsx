@@ -1,15 +1,16 @@
-import { memo } from 'react';
-import styles from './index.less';
-import React from 'react';
+import React, { memo } from 'react';
 import { IHeaderConfig } from './schema';
+
 import logos from '@/assets/header.png';
+import styles from './index.less';
+
 const Header = memo((props: IHeaderConfig) => {
   const { bgColor, logo, logoText, fontSize, color } = props;
   return (
     <>
       {props.isTpl && (
         <div>
-          <img src={logos} alt="" />
+          <img src={logos} style={{ width: '128px' }} alt="" />
         </div>
       )}
       {!props.isTpl && (

@@ -14,10 +14,10 @@ import WhiteTpl from './WhiteTpl/template';
 import RichText from './RichText/template';
 
 const basicTemplate = [
-  Carousel,
-  Footer,
-  Form,
   Header,
+  Footer,
+  Carousel,
+  Form,
   Icon,
   Image,
   List,

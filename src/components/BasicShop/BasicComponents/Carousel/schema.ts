@@ -79,29 +79,29 @@ const Carousel: ICarouselSchema = {
     imgList: [
       {
         id: '1',
-        title: '趣谈小课1',
-        desc: '致力于打造优质小课程',
+        title: '湖北师范大学',
+        desc: '湖北师范大学logo',
         link: 'xxxxx',
         imgUrl: [
           {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: `${serverUrl}/uploads/1_1740bd7c3dc.png`,
+            url: `https://i.niupic.com/images/2021/04/28/9gNw.jpeg`,
           },
         ],
       },
       {
         id: '2',
-        title: '趣谈小课1',
-        desc: '致力于打造优质小课程',
+        title: '湖北师范大学',
+        desc: '湖北师范大学大门',
         link: 'xxxxx',
         imgUrl: [
           {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: `${serverUrl}/uploads/2_1740bd8d525.png`,
+            url: `https://i.niupic.com/images/2021/04/28/9gNx.jpeg`,
           },
         ],
       },

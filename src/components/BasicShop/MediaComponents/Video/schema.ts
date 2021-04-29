@@ -35,7 +35,7 @@ const Video: IVideoSchema = {
         uid: '001',
         name: 'image.png',
         status: 'done',
-        url: 'http://49.234.61.19/uploads/1_1740c6fbcd9.png',
+        url: 'https://i.niupic.com/images/2021/04/29/9gPr.png',
       },
     ],
     url: '',

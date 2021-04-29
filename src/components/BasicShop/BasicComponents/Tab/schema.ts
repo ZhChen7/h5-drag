@@ -68,8 +68,8 @@ const Tab: ITabSchema = {
     sourceData: [
       {
         id: '1',
-        title: '趣谈小课1',
-        desc: '致力于打造优质小课程',
+        title: 'tab1',
+        desc: 'tab1',
         link: 'xxxxx',
         type: 0,
         imgUrl: [
@@ -77,14 +77,14 @@ const Tab: ITabSchema = {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: 'http://49.234.61.19/uploads/1_1740c6fbcd9.png',
+            url: 'https://i.niupic.com/images/2021/04/29/9gPr.png',
           },
         ],
       },
       {
         id: '2',
-        title: '趣谈小课2',
-        desc: '致力于打造优质小课程',
+        title: 'tab2',
+        desc: 'tab2',
         link: 'xxxxx',
         type: 0,
         imgUrl: [
@@ -92,14 +92,14 @@ const Tab: ITabSchema = {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: 'http://49.234.61.19/uploads/2_1740c7033a9.png',
+            url: 'https://i.niupic.com/images/2021/04/29/9gPs.png',
           },
         ],
       },
       {
         id: '3',
-        title: '趣谈小课3',
-        desc: '致力于打造优质小课程',
+        title: 'tab3',
+        desc: 'tab3',
         link: 'xxxxx',
         type: 1,
         imgUrl: [
@@ -107,7 +107,7 @@ const Tab: ITabSchema = {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: 'http://49.234.61.19/uploads/1_1740c6fbcd9.png',
+            url: 'https://i.niupic.com/images/2021/04/29/9gPr.png',
           },
         ],
       },

@@ -101,31 +101,33 @@ const List: IListSchema = {
     sourceData: [
       {
         id: '1',
-        title: '趣谈小课',
-        desc: '致力于打造优质小课程',
+        title: 'HBNU_logo',
+        desc: '湖北师范大学logo',
         price: '免费',
-        link: 'xxxxx',
+        link:
+          'https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6',
         imgUrl: [
           {
             uid: '001',
             name: 'image.png',
             status: 'done',
-            url: `${serverUrl}/uploads/1_1740c6fbcd9.png`,
+            url: `https://i.niupic.com/images/2021/04/29/9gPt.png`,
           },
         ],
       },
       {
         id: '2',
-        title: '趣谈小课',
-        desc: '致力于打造优质小课程',
+        title: 'HBNU_logo',
+        desc: '湖北师范大学logo',
         price: '免费',
-        link: 'xxxxx',
+        link:
+          'https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6',
         imgUrl: [
           {
             uid: '002',
             name: 'image.png',
             status: 'done',
-            url: `${serverUrl}/uploads/1_1740c6fbcd9.png`,
+            url: `https://i.niupic.com/images/2021/04/29/9gPt.png`,
           },
         ],
       },

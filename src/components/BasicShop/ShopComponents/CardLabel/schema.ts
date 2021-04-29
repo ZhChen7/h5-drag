@@ -86,7 +86,7 @@ const CardLabel: ICardSchema = {
         uid: '001',
         name: 'image.png',
         status: 'done',
-        url: `${serverUrl}/uploads/1_1740c6fbcd9.png`,
+        url: `https://i.niupic.com/images/2021/04/29/9gPr.png`,
       },
     ],
     bgColor: 'rgba(168,11,212,1)',

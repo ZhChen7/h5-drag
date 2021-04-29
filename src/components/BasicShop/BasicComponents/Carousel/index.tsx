@@ -2,7 +2,7 @@ import React, { memo, PropsWithChildren } from 'react';
 import { Carousel } from 'zarm';
 import styles from './index.less';
 import { ICarouselConfig } from './schema';
-import logo from '@/assets/banner.png';
+import logo from '@/assets/lunbo.png';
 
 interface CarouselTypes extends ICarouselConfig {
   isTpl: boolean;
@@ -30,7 +30,7 @@ const XCarousel = memo((props: PropsWithChildren<CarouselTypes>) => {
       ) : (
         <Carousel
           onChange={index => {
-            // console.log(`onChange: ${index}`);
+            console.log(`onChange: ${index}`);
           }}
           direction={direction}
           swipeable={swipeable}
