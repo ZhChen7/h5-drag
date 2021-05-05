@@ -92,6 +92,19 @@ export function unParams(params = '?a=1&b=2&c=3') {
   return obj;
 }
 
+export function getQueryString(str: string) {
+  let str1 = str.slice(1);
+  let arr = str1.split('&');
+  let map = new Map();
+
+  arr.map(item => {
+    const [key, value] = item.split('=');
+    map.set(key, decodeURIComponent(value));
+  });
+
+  return map;
+}
+
 export function throttle(fn: Function, delay: number) {
   let flag = true;
   return (...args: any) => {

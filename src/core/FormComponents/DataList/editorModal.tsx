@@ -29,7 +29,6 @@ export type EditorModalProps = {
 const EditorModal: FC<EditorModalProps> = props => {
   const { item, onSave, visible, onCancel, cropRate } = props;
   const onFinish = (values: Store) => {
-    console.log(values);
     onSave && onSave(values);
   };
   const handleOk = () => {

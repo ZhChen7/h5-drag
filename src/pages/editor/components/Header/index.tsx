@@ -1,5 +1,5 @@
 import React, { useRef, memo, useMemo, useState, useEffect } from 'react';
-import { Button, Input, Modal, Select, Upload, Tooltip, Badge } from 'antd';
+import { Button, Input, Modal, Select, Upload, Tooltip, Badge, message } from 'antd';
 import {
   ArrowLeftOutlined,
   MobileOutlined,
@@ -34,10 +34,21 @@ interface HeaderComponentProps {
   undohandler: any;
   redohandler: any;
   importTpl: any;
+  tplName: any;
+  id: number;
 }
 
 const HeaderComponent = memo((props: HeaderComponentProps) => {
-  const { pointData, location, clearData, undohandler, redohandler, importTpl } = props;
+  const {
+    pointData,
+    location,
+    clearData,
+    undohandler,
+    redohandler,
+    importTpl,
+    tplName = '',
+    id = -1,
+  } = props;
   const [showModalIframe, setShowModalIframe] = useState(false);
   const [showFaceModal, setShowFaceModal] = useState(false);
   const [faceUrl, setFaceUrl] = useState('');
@@ -75,13 +86,20 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
   };
 
   const handleSaveTpl = () => {
+    const InputDOM =
+      tplName === '' ? (
+        <Input ref={iptRef} allowClear />
+      ) : (
+        <Input ref={iptRef} disabled value={`${tplName}`} />
+      );
+
     confirm({
       title: '确定要保存吗？',
       content: (
         <div className={styles.saveForm}>
           <div className={styles.formIpt}>
             <span>模版名称：</span>
-            <Input ref={iptRef} />
+            {InputDOM}
           </div>
           <div className={styles.formIpt}>
             <span>封面设置：</span>
@@ -107,9 +125,41 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
       cancelText: '取消',
       onOk() {
         let name = iptRef.current!.state.value;
-        req.get('/api').then(res => {
-          console.log(res);
-        });
+        let templateData: any;
+        if (id && id > 0) {
+          // edit修改
+          templateData = {
+            id,
+            name,
+            pointData: JSON.stringify(pointData),
+          };
+          req.post('/api/fixtpldata', templateData).then(res => {
+            if (res.data && res.data.err_code === 0) {
+              message.success('低代码平台模版保存成功！');
+              setTimeout(() => {
+                history.push('/list');
+              }, 1000);
+            } else {
+              message.error('因不可抗力低代码平台模版保存失败～');
+            }
+          });
+        } else {
+          // 新建tpl
+          templateData = {
+            name,
+            pointData: JSON.stringify(pointData),
+          };
+          req.post('/api/saveTemplate', templateData).then(res => {
+            if (res.data && res.data.err_code === 0) {
+              message.success('低代码平台模版保存成功！');
+              setTimeout(() => {
+                history.push('/list');
+              }, 1000);
+            } else {
+              message.error('因不可抗力低代码平台模版保存失败～');
+            }
+          });
+        }
       },
       onCancel() {
         console.log('Cancel');

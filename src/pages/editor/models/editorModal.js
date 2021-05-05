@@ -1,8 +1,3 @@
-/*
- * @Description: 添加键盘快捷键
- * @Version: 2.1
- * @Autor: xuxiaoxi
- */
 import { uuid } from '@/utils/tool';
 import key from 'keymaster';
 const pointData = localStorage.getItem('userData') || '[]';

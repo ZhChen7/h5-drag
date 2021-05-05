@@ -8,6 +8,7 @@ import {
   DoubleLeftOutlined,
 } from '@ant-design/icons'; // 图标库
 import { connect } from 'dva'; // 状态库
+import { ActionCreators, StateWithHistory } from 'redux-undo';
 
 import HeaderComponent from './components/Header'; // 头部组件
 import CanvasControl from './components/CanvasControl'; // 快捷键组件
@@ -23,8 +24,12 @@ import mediaTpl from 'components/BasicShop/MediaComponents/template'; // 媒体�
 import graphTpl from 'components/BasicShop/VisualComponents/template'; // 可视化组件
 
 import schemaH5 from 'components/BasicShop/schema';
-import { ActionCreators, StateWithHistory } from 'redux-undo';
-import { throttle, detectMobileBrowser, getBrowserNavigatorMetaInfo } from '@/utils/tool';
+import {
+  throttle,
+  detectMobileBrowser,
+  getBrowserNavigatorMetaInfo,
+  getQueryString,
+} from '@/utils/tool';
 
 import styles from './index.less';
 
@@ -40,9 +45,20 @@ const Container = (props: {
   const [scaleNum, setScale] = useState(1);
   const [collapsed, setCollapsed] = useState(false);
   const [rightColla, setRightColla] = useState(true);
+  const [tplName, SetTplName] = useState<string>('');
+  const [id, serId] = useState<number>(-1);
+
   const { pstate, cstate, dispatch } = props;
   const pointData = pstate ? pstate.pointData : [];
   const cpointData = cstate ? cstate.pointData : [];
+
+  useEffect(() => {
+    const urlMapObj = getQueryString(window.location.search);
+    if (urlMapObj.has('id')) {
+      SetTplName(urlMapObj.get('tplname'));
+      serId(urlMapObj.get('id'));
+    }
+  }, [tplName, id]);
 
   const changeCollapse = useMemo(() => {
     return (c: boolean) => {
@@ -345,6 +361,8 @@ const Container = (props: {
         clearData={clearData}
         location={props.location}
         importTpl={importTpl}
+        tplName={tplName}
+        id={id}
       />
 
       {/* ----------------- */}

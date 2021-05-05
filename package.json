@@ -17,8 +17,7 @@
     "web visible"
   ],
   "contributors": [
-    "徐小夕 <xujiang156@qq.com> (https://github.com/MrXujiang))",
-    "yehuozhili <yehuozhili@outlook.com> (https://github.com/yehuozhili))"
+
   ],
   "scripts": {
     "start": "umi dev",

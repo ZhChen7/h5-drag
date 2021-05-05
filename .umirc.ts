@@ -31,6 +31,10 @@ export default defineConfig({
           component: '../pages/editor',
         },
         {
+          path: '/list',
+          component: '../pages/tplview',
+        },
+        {
           path: '/mobileTip',
           component: '../pages/mobileTip',
         },
@@ -54,7 +58,7 @@ export default defineConfig({
   },
   proxy: {
     '/api': {
-      target: 'http://10.61.209.130:3000/', //对应自己的接口
+      target: 'http://10.60.70.124:3000/', //对应自己的接口
       changeOrigin: true,
       ws: true,
       pathRewrite: {
