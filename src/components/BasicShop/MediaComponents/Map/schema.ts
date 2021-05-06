@@ -42,7 +42,7 @@ const AMap: IMapSchema = {
     },
   ],
   config: {
-    ak: '你的百度地图ak',
+    ak: 'paV04w5UThVaBPbbDufZwcZziXo19HVx',
     position: [121.444017, 31.237787],
     location: '上海市',
   },

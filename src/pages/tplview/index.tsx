@@ -51,8 +51,6 @@ const Tplview = (props: ITplviewProps) => {
   const cardHandleClick = async (item: tplState) => {
     await clearData();
     await importTpl(JSON.parse(item.tplstrdata));
-
-    console.log('item', item);
     history.push({
       pathname: '/editor',
       query: {

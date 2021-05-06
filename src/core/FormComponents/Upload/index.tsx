@@ -128,12 +128,66 @@ class PicturesWall extends React.Component<PicturesWallType> {
   };
 
   componentDidMount() {
-    // req.get(`/visible/bed/get?tid=${unParams(location.search)!.tid}`).then(res => {
-    //   res &&
-    //     this.setState({
-    //       imgBed: res,
-    //     });
-    // });
+    const url = 'http://qsoidv5cx.hn-bkt.clouddn.com/';
+    let img = [
+      '04.png',
+      '05.png',
+      '07.png',
+      '08.png',
+      '09.png',
+      '10.png',
+      '11.png',
+      '12.png',
+      '13.jpg',
+      '14.jpg',
+      '15.jpg',
+      '16.jpg',
+      '17.jpg',
+      '18.jpg',
+      '19.jpg',
+      '20.jpg',
+      '21.jpg',
+      '22.jpg',
+      '23.jpg',
+      '24.jpg',
+    ];
+    let bg = [
+      '001.jpg',
+      '002.jpg',
+      '003.jpg',
+      '004.jpg',
+      '005.jpg',
+      '006.jpg',
+      '007.jpg',
+      '008.jpg',
+      '009.jpg',
+      '010.jpg',
+      '011.jpg',
+      '012.jpg',
+      '013.jpg',
+      '014.jpg',
+    ];
+
+    let imgArr: {
+      photo: Array<string>;
+      bg: Array<string>;
+      chahua?: Array<string>;
+    } = {
+      photo: [],
+      bg: [],
+    };
+
+    img.forEach(item => {
+      imgArr.photo.push(`${url}${item}`);
+    });
+
+    bg.forEach(item => {
+      imgArr.bg.push(`${url}${item}`);
+    });
+
+    this.setState({
+      imgBed: imgArr,
+    });
   }
 
   render() {
@@ -213,9 +267,11 @@ class PicturesWall extends React.Component<PicturesWallType> {
             {fileList.length >= maxLen ? null : uploadButton}
           </Upload>
         )}
+
         <div className={styles.wallBtn} onClick={this.handleWallShow}>
           图片库
         </div>
+
         <Modal
           visible={previewVisible}
           title={previewTitle}
@@ -224,6 +280,7 @@ class PicturesWall extends React.Component<PicturesWallType> {
         >
           <img alt="预览图片" style={{ width: '100%' }} src={previewImage} />
         </Modal>
+
         <Modal
           visible={wallModalVisible}
           title="图片库"
@@ -260,9 +317,9 @@ class PicturesWall extends React.Component<PicturesWallType> {
                 </TabPane>
               );
             })}
-            <TabPane tab="更多" key="more">
-              <Result status="500" title="Dooring温馨提示" subTitle="更多素材, 正在筹备中..." />
-            </TabPane>
+            {/* <TabPane tab="更多" key="more">
+              <Result status="500" title="温馨提示" subTitle="更多素材, 正在筹备中..." />
+            </TabPane> */}
           </Tabs>
         </Modal>
       </>

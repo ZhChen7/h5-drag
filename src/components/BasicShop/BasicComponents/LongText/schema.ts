@@ -98,7 +98,7 @@ const LongText: ILongTextSchema = {
     },
   ],
   config: {
-    text: '我是长文本有一段故事，dooring可视化编辑器无限可能，赶快来体验吧，骚年们，奥利给~',
+    text: '我是长文本有一段故事，h5低代码可视化编辑器无限可能，赶快来体验吧，骚年们，奥利给~',
     color: 'rgba(60,60,60,1)',
     fontSize: 14,
     indent: 20,

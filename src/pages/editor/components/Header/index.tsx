@@ -20,7 +20,7 @@ import { saveAs } from 'file-saver';
 import req from '@/utils/req';
 import Code from '@/assets/weixin.png';
 import styles from './index.less';
-// import MyPopover from 'yh-react-popover';
+import MyPopover from 'yh-react-popover';
 // import * as axios from 'axios';
 
 const { confirm } = Modal;
@@ -229,11 +229,11 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
 
   const handleSaveCode = () => {
     Modal.confirm({
-      title: '确定要下载吗? 每人每天只能下载2次哦~',
+      title: '确定要下载JSON文件吗?',
       okText: '确定',
       cancelText: '取消',
       onOk() {
-        // 未来的下载代码逻辑
+        downLoadJson();
       },
     });
   };
@@ -295,7 +295,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         >
           保存模版
         </Button>
-        {/* <Upload {...uploadprops}>
+        <Upload {...uploadprops}>
           <Button type="link" style={{ marginRight: '8px' }}>
             <UploadOutlined />
           </Button>
@@ -307,8 +307,8 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           disabled={!pointData.length}
         >
           <DownloadOutlined />
-        </Button> */}
-        <Button
+        </Button>
+        {/* <Button
           type="link"
           style={{ marginRight: '9px' }}
           title="下载json文件"
@@ -316,7 +316,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           disabled={!pointData.length}
         >
           <CopyOutlined />
-        </Button>
+        </Button> */}
         <Button
           type="link"
           style={{ marginRight: '9px' }}
@@ -345,7 +345,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
         >
           <DeleteOutlined />
         </Button>
-        {/* <Button
+        <Button
           type="link"
           style={{ marginRight: '9px' }}
           title="撤销"
@@ -353,7 +353,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
           disabled={!pointData.length}
         >
           <UndoOutlined />
-        </Button> */}
+        </Button>
         {/* <Button type="link" style={{ marginRight: '9px' }} title="重做" onClick={redohandler}>
           <RedoOutlined />
         </Button> */}

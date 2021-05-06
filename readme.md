@@ -31,17 +31,6 @@
 
 相关产品: [V6.Dooring | 大屏可视化编辑器](https://github.com/MrXujiang/v6.dooring.public)
 
-## Author
-
-👤 **徐小夕**
-
-* Website: http://h5.dooring.cn
-* Github: [@MrXujiang](https://github.com/MrXujiang)
-
-## 声明
-
-专有软件及代码，未获得授权的情况下，禁止对该仓库代码进行反编译、分发等行为，否则将承担相应的法律后果。
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/MrXujiang/h5-drag/issues).
@@ -245,15 +234,5 @@ cnpm run dev
 4. 添加表单定制模块
 
 
-## 持续升级 | Continuous upgrades
-正在升级1.5版本，敬请期待...
 
-## 赞助 | Sponsored
-开源不易, 有了您的赞助, 我们会做的更好~
 
-<img src="http://49.234.61.19/uploads/WechatIMG2_1742b586c3d.jpeg" width="180px" />
-
-## 技术反馈和交流群 | Technical feedback and communication
-微信：beautifulFront
-
-<img src="http://49.234.61.19/uploads/code_1763cc23385.png" width="180px" />

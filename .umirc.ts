@@ -58,7 +58,7 @@ export default defineConfig({
   },
   proxy: {
     '/api': {
-      target: 'http://10.60.70.124:3000/', //对应自己的接口
+      target: 'http://192.168.1.102:3000/', //对应自己的接口
       changeOrigin: true,
       ws: true,
       pathRewrite: {
