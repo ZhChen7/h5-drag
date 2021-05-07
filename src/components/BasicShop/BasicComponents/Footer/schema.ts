@@ -22,6 +22,8 @@ export interface IFooterConfig extends ICommonBaseType {
   align: TSelectDefaultType<TfooterSelectKeyType>;
   fontSize: TNumberDefaultType;
   height: TNumberDefaultType;
+  textTop: TNumberDefaultType;
+  textLeft: TNumberDefaultType;
 }
 
 export interface IFooterSchema {
@@ -58,6 +60,16 @@ const Footer: IFooterSchema = {
       type: 'Color',
     },
     {
+      key: 'textTop',
+      name: '文字纵向位移',
+      type: 'Number',
+    },
+    {
+      key: 'textLeft',
+      name: '文字横向位移',
+      type: 'Number',
+    },
+    {
       key: 'align',
       name: '对齐方式',
       type: 'Select',
@@ -84,6 +96,8 @@ const Footer: IFooterSchema = {
     align: 'center',
     fontSize: 16,
     height: 50,
+    textTop: 0,
+    textLeft: 0,
     ...baseDefault,
   },
 };

@@ -57,7 +57,25 @@ export type TDataListDefaultTypeItem = {
 
 export type TDataListDefaultType = Array<TDataListDefaultTypeItem>;
 
+export interface ITetxConfigType {
+  key: string;
+  name: string;
+  type: 'Color';
+}
+
 ////////////////////
+// export interface ItextTopConfigType {
+//   key: string;
+//   name: string;
+//   type: 'Number';
+// }
+
+// export interface ItextLeftConfigType {
+//   key: string;
+//   name: string;
+//   type: 'Number';
+// }
+
 export interface IColorConfigType {
   key: string;
   name: string;

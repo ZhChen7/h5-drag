@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { IFooterConfig } from './schema';
 import logo from '@/assets/footer.png';
+
 const Footer = memo((props: IFooterConfig) => {
   const { bgColor, text, color, align, fontSize, height } = props;
   return (
@@ -33,7 +34,14 @@ const Footer = memo((props: IFooterConfig) => {
               lineHeight: height + 'px',
             }}
           >
-            {text}
+            <span
+              style={{
+                display: 'inline-block',
+                transform: `translate(${props.textLeft}px,${props.textTop}px)`,
+              }}
+            >
+              {text}
+            </span>
           </footer>
         </div>
       )}
